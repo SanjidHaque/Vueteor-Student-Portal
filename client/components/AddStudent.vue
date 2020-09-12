@@ -14,6 +14,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <v-text-field
+                                    prepend-inner-icon="mdi-pencil"
                                     :rules="fieldRules"
                                     v-model="student.name"
                                     outlined
@@ -26,6 +27,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <v-text-field
+                                    prepend-inner-icon="mdi-email"
                                     :rules="fieldRules"
                                     v-model="student.email"
                                     outlined
@@ -38,6 +40,7 @@
                     <div class="row">
                         <div class="col-xl-7">
                             <v-text-field
+                                    prepend-inner-icon="mdi-phone"
                                     :rules="fieldRules"
                                     v-model="student.phone"
                                     outlined
@@ -47,6 +50,7 @@
                         </div>
                         <div class="col-xl-5">
                             <v-text-field
+                                    prepend-inner-icon="mdi-calendar"
                                     :rules="fieldRules"
                                     v-model="student.dateOfBirth"
                                     outlined

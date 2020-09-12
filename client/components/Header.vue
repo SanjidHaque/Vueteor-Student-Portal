@@ -27,6 +27,7 @@
         font-size: 20px;
 
         a {
+            cursor: pointer;
             font-weight: bold;
             color: #2c3e50;
 

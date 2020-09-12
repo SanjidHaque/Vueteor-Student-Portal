@@ -5,7 +5,7 @@
 
                 <v-card>
                     <v-card-title>
-                        <span style="font-weight: bold;"> Add Subject </span>
+                        <span> Add Subject </span>
                     </v-card-title>
 
                     <v-card-text>
