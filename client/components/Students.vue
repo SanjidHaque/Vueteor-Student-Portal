@@ -2,7 +2,8 @@
     <div>
         <div class="row">
             <div class="col-xl-12">
-                <v-btn small
+                <v-btn
+                       small
                        text
                        class="v-btn-add">
                     Add Student
@@ -24,7 +25,6 @@
                                     style="font-weight: bold;"
                                     small
                                     class="mr-2"
-                                    @click="editStudent(item)"
                             >
                                 mdi-plus
                             </v-icon>
@@ -69,6 +69,8 @@
 
 <script>
     import { Students } from '../../imports/api/students';
+
+
     w_students = Students;
     export default {
         name: 'Students',
@@ -79,6 +81,10 @@
         },
         data() {
             return {
+                student: null,
+                dialog: false,
+                editMode: false,
+                headerText: '',
                 snackbar: false,
                 text: 'Student removed successfully',
                 headers: [
@@ -93,7 +99,7 @@
         },
         methods: {
             editStudent(student) {
-                console.log(student);
+                this.$router.push( '/edit-student/' + student._id );
             },
             removeStudent(student) {
                 if (confirm('Are you sure you want to delete this student?')) {

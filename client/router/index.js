@@ -3,6 +3,7 @@ import Vue from "vue";
 
 import Students from '../components/Students';
 
+
 Vue.use(Router);
 
 
@@ -12,6 +13,11 @@ const router = new Router({
             path: '/',
             name: 'Students',
             component: Students
+        },
+        {
+            path: '/edit-student/:id',
+            name: 'EditStudent',
+            component: () => import('../components/EditStudent')
         },
         {
             path: '/subjects',
