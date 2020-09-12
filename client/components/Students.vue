@@ -166,9 +166,18 @@
                     var subject = { name: subjectName, students: [studentName] };
                     Subjects.insert(subject);
                 } else {
-                    Subjects.update({_id: getSubject._id}, {
-                        $push: { 'students': studentName }
+                    var isDuplicate = false;
+                    getSubject.students.forEach(x => {
+                        if (x.toUpperCase() === studentName.toUpperCase()) {
+                            isDuplicate = true;
+                        }
                     });
+
+                    if (!isDuplicate) {
+                        Subjects.update({_id: getSubject._id}, {
+                            $push: {'students': studentName}
+                        });
+                    }
                 }
             },
             openAddSubjectDialog(student) {
