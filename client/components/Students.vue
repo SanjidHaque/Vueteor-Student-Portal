@@ -120,6 +120,16 @@
                 if (confirm('Are you sure you want to delete this student?')) {
                     var getStudent = Students.findOne({ _id: student._id });
                     if (getStudent !== undefined) {
+
+                        getStudent.subjects.forEach(subject => {
+                            var regex = new RegExp(["^", subject, "$"].join(""), "i");
+                            var getSubject = Subjects.findOne({ name: regex });
+                            Subjects.update(
+                                { _id: getSubject._id },
+                                {$pull : {'students': getStudent.name }}
+                            );
+                        });
+
                         Students.remove({ _id: getStudent._id });
                         this.snackbar = true;
                     }
