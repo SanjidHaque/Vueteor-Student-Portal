@@ -15,6 +15,11 @@ const router = new Router({
             component: Students
         },
         {
+            path: '/add-student',
+            name: 'AddStudent',
+            component: () => import('../components/AddStudent')
+        },
+        {
             path: '/edit-student/:id',
             name: 'EditStudent',
             component: () => import('../components/EditStudent')

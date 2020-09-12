@@ -55,7 +55,7 @@
                         </v-text-field>
                     </div>
                 </div>
-                
+
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn :disabled="!valid" class="v-btn-save" text @click="editStudent">Save</v-btn>
@@ -96,12 +96,6 @@
             this.student = Students.findOne({ _id: this.id });
         },
         methods: {
-            initialStudentObject() {
-                this.name = this.student.name;
-                this.email = this.student.email;
-                this.phone = this.student.phone;
-                this.dateOfBirth = this.student.dateOfBirth;
-            },
             editStudent() {
                Students.update(this.id, {
                    $set: {
